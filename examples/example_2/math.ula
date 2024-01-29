@@ -1,0 +1,6 @@
+var a : int = 10
+var b : int = 9
+var c : int = a + b
+
+-- Displays the sum of a + b (stored in the variable c)
+print c

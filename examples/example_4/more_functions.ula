@@ -1,0 +1,10 @@
+def display_name(name: string)
+    print name
+enddef
+
+def pow_n(a:int b:int)
+    var sum : int = a
+    for 0..(b-1)
+        sum *= a
+    return sum
+enddef

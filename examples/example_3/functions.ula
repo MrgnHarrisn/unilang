@@ -1,0 +1,7 @@
+-- Sum function adds a and b together
+def sum(a:int, b:int)
+    return a + b
+enddef
+
+-- displays the result of the function 'sum'
+print sum(9 10)
