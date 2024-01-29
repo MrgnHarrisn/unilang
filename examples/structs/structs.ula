@@ -1,0 +1,5 @@
+
+struct Vec2 {
+    x: float32
+    y: float32
+}

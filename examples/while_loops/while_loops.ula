@@ -1,0 +1,11 @@
+def some_loop() : void {
+    
+    var data = 0..100
+
+    -- data.map(i = i * 0.5);
+
+    for (data.iterate()) |i| {
+        data[i] *= 0.5
+    }
+
+}
