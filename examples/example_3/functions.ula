@@ -1,5 +1,5 @@
 -- Sum function adds a and b together
-def sum(a:int, b:int)
+def sum(a: int, b: int) : int
     return a + b
 enddef
 

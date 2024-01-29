@@ -1,0 +1,19 @@
+def display_name(name: string) : void
+    print name
+enddef
+
+-- messing with for loop designs
+def some_func(a: int) : void {
+    -- var b = 0..100
+    for (b.iterate()) |i = i*0.5| {
+        a += i
+    }
+}
+
+-- for loop designs
+def pow_n(a:int b:int) : int
+    var sum : int = a
+    for 0..(b-1) |i|
+        sum *= a
+    return sum
+enddef
