@@ -22,6 +22,13 @@ public:
 	/// </summary>
 	/// <returns></returns>
 	vector<Token> tokenize();
+
+	/// <summary>
+	/// Sets the source to a new string
+	/// </summary>
+	/// <param name="src"></param>
+	void set_source(const string& src);
+
 private:
 	std::string m_source;
 	size_t m_position;

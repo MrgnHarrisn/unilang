@@ -31,6 +31,11 @@ vector<Token> Lexer::tokenize()
 
 }
 
+void Lexer::set_source(const string& src)
+{
+	m_source = src;
+}
+
 Token Lexer::read_number()
 {
 	size_t start = m_position;
