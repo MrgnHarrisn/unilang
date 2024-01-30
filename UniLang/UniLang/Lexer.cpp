@@ -18,6 +18,7 @@ vector<Token> Lexer::tokenize()
 			m_position++;
 		}
 		else if (std::isalpha(m_source[m_position])) {
+			/* Check if it is a key word or identifier */
 			tokens.push_back(read_identifier());
 		}
 		else {
