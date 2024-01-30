@@ -19,7 +19,12 @@ vector<Token> Lexer::tokenize()
 		}
 		else if (std::isalpha(m_source[m_position])) {
 			/* Check if it is a key word or identifier */
-			tokens.push_back(read_identifier());
+			if (is_key_word()) {
+				tokens.push_back(read_key_word());
+			}
+			else {
+				tokens.push_back(read_identifier());
+			}
 		}
 		else {
 			m_position++;
@@ -64,6 +69,28 @@ Token Lexer::read_identifier()
 
 }
 
+Token Lexer::read_key_word()
+{
+	size_t start = m_position;
+	while (m_position < m_source.length() && std::isalnum(m_source[m_position])) {
+		m_position++;
+	}
+	string word = m_source.substr(start, m_position - start);
+
+	return { keyword_to_tt(word), word };
+
+}
+
+TokenType Lexer::keyword_to_tt(const string& word)
+{
+	if (word == "print") {
+		return TokenType::PRINT;
+	}
+	else {
+		return TokenType::UNKNOWN;
+	}
+}
+
 bool Lexer::is_operator(char c)
 {
 	return c == '+' || c == '-' || c == '*' || c == '/';
@@ -78,7 +105,7 @@ bool Lexer::is_key_word()
 	}
 	string word = m_source.substr(start, pos - start);
 	
-	if (word == "var" || word == "const" || word == "if" || word == "else" || word == "while") {
+	if (word == "var" || word == "print" || word == "const" || word == "if" || word == "else" || word == "while") {
 		return true;
 	}
 	else if (word == "return" || word == "def" || word == "true" || word == "false" || word == "class") {

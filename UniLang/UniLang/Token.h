@@ -12,12 +12,14 @@ enum TokenType {
     FLOAT_LITERAL,      // For representing floating-point values, e.g., 3.14
 
     // Keywords
+    PRINT,
 
     // Operators
     OPERATOR,
 
     // Special tokens
     END_OF_FILE,                        // End of file token
+    UNKNOWN,
 };
 
 struct Token {

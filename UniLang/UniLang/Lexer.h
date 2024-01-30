@@ -35,6 +35,8 @@ private:
 
 	Token read_number();
 	Token read_identifier();
+	Token read_key_word();
+	TokenType keyword_to_tt(const string& word);
 	bool is_operator(char c);
 	bool is_key_word();
 
